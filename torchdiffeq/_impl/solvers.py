@@ -25,7 +25,7 @@ class AdaptiveStepsizeODESolver(metaclass=abc.ABCMeta):
     def valid_callbacks(cls):
         return set()
 
-    def integrate(self, t):]
+    def integrate(self, t):
         print("in solvers.py/AdaptiveStepsizeODESolver")
         solution = torch.empty(len(t), *self.y0.shape, dtype=self.y0.dtype, device=self.y0.device)
         solution[0] = self.y0
