@@ -93,7 +93,7 @@ def odeint_ezgi(func, y0, t, *, rtol=1e-7, atol=1e-9, method=None, options=None,
         return event_t, solution
 
 
-def odeint_event(func, y0, t0, *, event_fn, reverse_time=False, odeint_interface=odeint, **kwargs):
+def odeint_event(func, y0, t0, *, event_fn, reverse_time=False, odeint_interface=odeint_ezgi, **kwargs):
     """Automatically links up the gradient from the event time."""
 
     if reverse_time:
