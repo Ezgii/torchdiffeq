@@ -25,7 +25,8 @@ class AdaptiveStepsizeODESolver(metaclass=abc.ABCMeta):
     def valid_callbacks(cls):
         return set()
 
-    def integrate(self, t):
+    def integrate(self, t):]
+        print("in solvers.py/AdaptiveStepsizeODESolver")
         solution = torch.empty(len(t), *self.y0.shape, dtype=self.y0.dtype, device=self.y0.device)
         solution[0] = self.y0
         t = t.to(self.dtype)
@@ -100,6 +101,7 @@ class FixedGridODESolver(metaclass=abc.ABCMeta):
         pass
 
     def integrate(self, t):
+        print("in solvers.py/FixedGridODESolver")
         time_grid = self.grid_constructor(self.func, self.y0, t)
         assert time_grid[0] == t[0] and time_grid[-1] == t[-1]
 
